@@ -9,14 +9,14 @@
 /*
  * Change this for the URL of your repository
  */
-define('PRISMIC_URL', 'https://detailtherapy.prismic.io/api/v2');
+define('PRISMIC_URL', 'https://beyondusability.prismic.io/api/v2');
 define('PRISMIC_TOKEN', null);
 
 /*
  * Your site metadata
  */
-define('SITE_TITLE', 'Detail Therapy');
-define('SITE_DESCRIPTION', 'New Car Protection & Aftercare Services');
+define('SITE_TITLE', 'Beyond Usability');
+define('SITE_DESCRIPTION', 'Business Development and Ecommerce Marketing');
 
 /*
  * Set to true to display error details

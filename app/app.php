@@ -22,18 +22,29 @@ require_once 'includes/http.php';
  *  --[ INSERT YOUR ROUTES HERE ]--
  */
 
+	
+// In app/app.php, in place of the block starting with "$app->get('/',", put the following:
+$app->get('/', function ($request, $response, $args) use ($app, $prismic) {
+    // Query the API
+    $api = $prismic->get_api();
+    $document = $api->getByUID('page', 'about');
+ 
+    // Render the page
+    render($app, 'home', array('document' => $document));
+});
+
 // Previews
-$app->get('/preview', function ($request, $response) use ($app, $prismic) {
+/*$app->get('/preview', function ($request, $response) use ($app, $prismic) {
     $token = $request->getParam('token');
     $url = $prismic->get_api()->previewSession($token, $prismic->linkResolver, '/');
     setcookie(Prismic\PREVIEW_COOKIE, $token, time() + 1800, '/', null, false, false);
     return $response->withStatus(302)->withHeader('Location', $url);
-});
+});*/
 
 // Index page
-$app->get('/', function ($request, $response) use ($app, $prismic) {
+/*$app->get('/', function ($request, $response) use ($app, $prismic) {
     render($app, 'home');
-});
+});*/
 
 // 404 Page (Keep at the bottom of the routes)
 $app->get('/{id}', function ($request, $response) use ($app, $prismic) {
