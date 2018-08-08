@@ -1,1 +1,1 @@
-# prismic-detail-therapy
+# Demo Prismic-Powered Website Running on Heroku
